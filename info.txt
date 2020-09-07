@@ -1,0 +1,55 @@
+
+## Basic Project Setup:
+1. Core:
+    - Index
+    - About
+2. User:
+    - Register
+    - Login
+    - Logout
+    - Account Setting
+    - User's memes / Profile
+3. Memes:
+    - Create/Upload Memes
+    - Delete
+    - Show Meme (Single Page for each meme)
+
+
+## Modals:
+1. User:
+    - id
+    - username
+    - email
+    - password
+    - profile Image
+    - post/memes
+
+2. Meme:
+    - id
+    - user_id
+    - date 
+    - caption
+    - image/ main_meme
+
+## Folder Structure:
+|mainproject
+|    1. Core
+|           - __init__.py
+|           - views
+|    2. Memes
+|           - __init__.py
+|           - views.py
+|           - forms.py
+|           - ImageHandler.py
+|    3. User
+|           - __init__.py
+|           - views.py
+|           - forms.py
+|           - ImageHandler.py
+|    4. Static/Images
+|    5. Templates
+|    6. __init__.py
+|    7. models.py
+|    8. Error Pages
+|           - handlers.py
+|app.py
