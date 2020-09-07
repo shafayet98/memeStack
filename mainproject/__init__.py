@@ -28,6 +28,9 @@ login_manager.init_app(app)
 login_manager.login_view = 'users.login'
 
 from mainproject.core.views import core
-app.register_blueprint(core)
+from mainproject.error_pages.views import error_pages
 
+
+app.register_blueprint(core)
+app.register_blueprint(error_pages)
 
