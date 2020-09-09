@@ -10,7 +10,7 @@ def load_user(user_id):
 
 # create models 
 
-class User(db.Model):
+class User(db.Model,UserMixin):
     __tablename__ = "users"
     id = db.Column(db.Integer,primary_key= True)
     profile_image = db.Column(db.String(20),nullable=False,default='default_profile.png')

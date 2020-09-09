@@ -21,12 +21,12 @@
             <a href="{{ url_for('core.about') }}">About</a>
         </li>
 
-
-        <!-- <li class='nav-link'>
-            <a href="#">Log out</a>
+        {% if current_user.is_authenticated %}
+        <li class='nav-link'>
+            <a href="{{ url_for('users.logout') }}">Log out</a>
         </li>
         <li class='nav-link'>
-            <a href="#">Account/Profile</a>
+            <a href="{{ url_for('users.account') }}">Account</a>
         </li>
         <li class='nav-link'>
             <a href="#">Create Post</a>
@@ -34,14 +34,16 @@
         <li class='nav-link'>
             <a href="#">Profile</a>
         </li>
-
+        {% else %}
 
         <li class='nav-link'>
-            <a href="#">Login</a>
+            <a href="{{ url_for('users.login') }}">Login</a>
         </li>
         <li class='nav-link'>
-            <a href="#">Register</a>
-        </li> -->
+            <a href="{{ url_for('users.register') }}">Register</a>
+        </li>
+
+        {% endif %}
 
     </ul>
 
