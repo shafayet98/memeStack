@@ -30,9 +30,10 @@ login_manager.login_view = 'users.login'
 from mainproject.core.views import core
 from mainproject.error_pages.views import error_pages
 from mainproject.users.views import users
+from mainproject.memes.views import meme_post
 
 
 app.register_blueprint(core)
 app.register_blueprint(error_pages)
 app.register_blueprint(users)
-
+app.register_blueprint(meme_post)
