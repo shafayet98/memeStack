@@ -13,7 +13,10 @@ def create_meme():
     form = MemePostForm()
     if form.validate_on_submit():
         getImgModified = add_pic(form.meme_image.data,current_user.username)
-        meme_post = Meme(meme_caption=form.meme_caption.data,meme_image = getImgModified, user_id= current_user.id)
+        img = form.meme_image.data
+        img = img.make_blob()
+        print(img)
+        meme_post = Meme(meme_caption=form.meme_caption.data,meme_image = img.read(), user_id= current_user.id)
         db.session.add(meme_post)
         db.session.commit()
         flash("Meme Post Created")

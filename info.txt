@@ -1,3 +1,10 @@
+Typically, files are stored in the filesystem and the path is stored in the database.
+This is the better solution because the web server typically has an efficient method of
+serving files from the filesystem, as opposed to the application sending large blobs of data dynamically.
+
+
+
+
 
 ## Basic Project Setup:
 1. Core:

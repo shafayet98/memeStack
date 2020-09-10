@@ -37,7 +37,7 @@ class Meme(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'),nullable = False)
     date = db.Column(db.DateTime,nullable=False, default = datetime.utcnow)
     meme_caption = db.Column(db.Text,nullable = False)
-    meme_image = db.Column(db.String(40),nullable=False)
+    meme_image = db.Column(db.LargeBinary,nullable=False)
     
 
     def __init__(self, meme_caption, meme_image, user_id):
