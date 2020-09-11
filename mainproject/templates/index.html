@@ -1,9 +1,17 @@
 {% extends "base.html" %} {% block content %}
 <div class="jumbotron">
     <h1>Welcome Home</h1>
-    <p>Hello</p>
 
 
 </div>
 
-<img src="{{url_for('static',filename= 'memes/'+meme_img)}}" alt=""> {% endblock %}
+<h3>{{memes}}</h3>
+
+{% for meme in memes %}
+<div class="card">
+    <div class="card-body">
+        <p>Hello</p>
+        <img src="{{url_for('static',filename= 'memes/'+meme.meme_image)}}" alt="">
+    </div>
+</div>
+{% endfor %} {% endblock %}

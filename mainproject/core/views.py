@@ -5,8 +5,9 @@ core = Blueprint('core',__name__)
 
 @core.route('/')
 def index():
-    all_memes = Meme.query.filter_by(user_id = 1).first()
-    return render_template("index.html",meme_img = all_memes.meme_image)
+    # all_memes = Meme.query.filter_by(user_id = 1).first()
+    memes = Meme.query.order_by(Meme.date.desc()).all()
+    return render_template("index.html",memes = memes)
 
 @core.route('/about')
 def about():
