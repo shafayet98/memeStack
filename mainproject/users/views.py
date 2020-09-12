@@ -67,3 +67,10 @@ def account():
 
 
 
+# user's profile where all post of that w=user can be find.
+@users.route('/profile/<username>')
+def profile(username):
+    user = User.query.filter_by(username = username).first_or_404()
+    memes_user = Meme.query.filter_by(author = user).order_by(Meme.date.desc()).all()
+    return render_template('profile.html',memes_user= memes_user, user = user)
+

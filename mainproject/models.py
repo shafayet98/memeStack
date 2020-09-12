@@ -18,7 +18,8 @@ class User(db.Model,UserMixin):
     username = db.Column(db.String(64),unique = True, index = True)
     password_hash = db.Column(db.String(128))
 
-    memes = db.relationship('Meme',backref='author',lazy = True)
+    memes = db.relationship('Meme',backref='author',lazy = True) # now the Meme table have a column named author which is invisible
+
 
     def __init__(self, email, username, password):
          self.email = email
