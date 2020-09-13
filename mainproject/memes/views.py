@@ -19,3 +19,9 @@ def create_meme():
         flash("Meme Post Created")
         return redirect(url_for('core.index'))
     return render_template('create_meme.html',form = form)
+
+# show
+@meme_post.route('/<int:meme_post_id>')
+def meme(meme_post_id):
+    each_meme = Meme.query.get_or_404(meme_post_id)
+    return render_template('meme_show.html',post = each_meme)
