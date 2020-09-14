@@ -12,4 +12,7 @@
         <img src="{{url_for('static',filename= 'memes/'+meme.meme_image)}}" alt="">
     </div>
 </div>
+<form action="{{url_for('meme_post.delete_meme',meme_post_id = meme.id)}}" method="POST">
+    <input class="btn btn-danger" type="submit" value="Delete">
+</form>
 {% endfor %} {% endblock %}

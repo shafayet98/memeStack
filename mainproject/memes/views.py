@@ -25,3 +25,15 @@ def create_meme():
 def meme(meme_post_id):
     each_meme = Meme.query.get_or_404(meme_post_id)
     return render_template('meme_show.html',post = each_meme)
+
+# delete
+@meme_post.route('/<int:meme_post_id>/delete',methods = ['GET','POST'])
+@login_required
+def delete_meme(meme_post_id):
+    del_meme = Meme.query.get_or_404(meme_post_id)
+    if del_meme.author != current_user:
+        abort(403)
+    db.session.delete(del_meme)
+    db.session.commit()
+    flash("Blog Post Deleted")
+    return redirect(url_for('users.profile',username= current_user.username))
