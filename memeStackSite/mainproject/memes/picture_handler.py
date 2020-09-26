@@ -44,19 +44,5 @@ def add_pic(pic_upload, username):
         os.remove(filepath)
         return "False"
 
-# def canUpload(pic_upload,username):
-    
-    
-#     picGot = pic_upload.filename
-#     print(picGot)
-#     img = image.load_img(picGot, target_size=(224, 224))
-#     x = image.img_to_array(img)
-#     x = np.expand_dims(x, axis=0)
-#     x = preprocess_input(x)
-#     prediction = model.predict(x)
-#     class_lable = CATEGORIES[int(prediction[0][0])]
-#     if class_lable == "Meme":
-#     #     return True
-#     # else:
-#     #     return False
+
 

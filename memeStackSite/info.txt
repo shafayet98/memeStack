@@ -3,9 +3,6 @@ This is the better solution because the web server typically has an efficient me
 serving files from the filesystem, as opposed to the application sending large blobs of data dynamically.
 
 
-
-
-
 ## Basic Project Setup:
 1. Core:
     - Index
