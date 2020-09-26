@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block content %}
+<div class="jumbotron">
+    <h1>Welcome Home</h1>
+</div>
+
+
+{% for meme in memes %}
+<div class="card">
+    <div class="card-body">
+        <p>
+            <a href="{{url_for('meme_post.meme',meme_post_id= meme.id)}}">Click to see meme</a>
+        </p>
+        <img src="{{url_for('static',filename= 'memes/'+meme.meme_image)}}" alt="">
+    </div>
+</div>
+{% endfor %} {% endblock %}

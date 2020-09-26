@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block content %}
+<div class="jumbotron">
+    <h1>Welcome to {{user.username}}'s Profile</h1>
+
+
+</div>
+
+{% for meme in memes_user %}
+<div class="card">
+    <div class="card-body">
+        <p>Caption: {{meme.meme_caption}}</p>
+        <img src="{{url_for('static',filename= 'memes/'+meme.meme_image)}}" alt="">
+    </div>
+</div>
+<form action="{{url_for('meme_post.delete_meme',meme_post_id = meme.id)}}" method="POST">
+    <input class="btn btn-danger" type="submit" value="Delete">
+</form>
+{% endfor %} {% endblock %}
