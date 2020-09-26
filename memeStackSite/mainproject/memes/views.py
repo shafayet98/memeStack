@@ -12,12 +12,16 @@ meme_post = Blueprint('meme_post',__name__)
 def create_meme():
     form = MemePostForm()
     if form.validate_on_submit():
+        # isuploadable = canUpload(form.meme_image.data,current_user.username)
         getImgModified = add_pic(form.meme_image.data,current_user.username)
-        meme_post = Meme(meme_caption=form.meme_caption.data,meme_image = getImgModified, user_id= current_user.id)
-        db.session.add(meme_post)
-        db.session.commit()
-        flash("Meme Post Created")
-        return redirect(url_for('core.index'))
+        if getImgModified != "False":
+            meme_post = Meme(meme_caption=form.meme_caption.data,meme_image = getImgModified, user_id= current_user.id)
+            db.session.add(meme_post)
+            db.session.commit()
+            flash("Meme Post Created")
+            return redirect(url_for('core.index'))
+        else:
+            flash("NOT A MEME")
     return render_template('create_meme.html',form = form)
 
 # show
