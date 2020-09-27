@@ -1,8 +1,9 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% block content %} {% if current_user.is_authenticated %}
+<a href="{{ url_for('users.account') }} " class="btn btn-outline-dark" role="button" aria-pressed="true">Setting</a> {% endif %}
+
+
 <div class="jumbotron">
     <h1>Welcome to {{user.username}}'s Profile</h1>
-
-
 </div>
 
 {% for meme in memes_user %}
