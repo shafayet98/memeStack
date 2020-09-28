@@ -10,90 +10,55 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- link css -->
     <link rel="stylesheet" href="../static/css/style.css">
-    <title>Document</title>
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/19b1b96522.js" crossorigin="anonymous"></script>
+    <title>memeStack</title>
 </head>
 
 <body>
-    <!-- <ul class='nav'>
-        <li class='nav-link'>
-            <a href="{{ url_for('core.index') }}">Home</a>
-        </li>
-        <li class='nav-link'>
-            <a href="{{ url_for('core.about') }}">About</a>
-        </li>
-
-        {% if current_user.is_authenticated %}
-        <li class='nav-link'>
-            <a href="{{ url_for('users.logout') }}">Log out</a>
-        </li>
-        <li class='nav-link'>
-            <a href="{{ url_for('users.account') }}">Account</a>
-        </li>
-        <li class='nav-link'>
-            <a href="{{url_for('meme_post.create_meme')}}">Create Post</a>
-        </li>
-        <li class='nav-link'>
-            <a href="{{url_for('users.profile',username= current_user.username)}}">Profile</a>
-        </li>
-        {% else %}
-
-        <li class='nav-link'>
-            <a href="{{ url_for('users.login') }}">Login</a>
-        </li>
-        <li class='nav-link'>
-            <a href="{{ url_for('users.register') }}">Register</a>
-        </li>
-
-        {% endif %}
-
-    </ul> -->
-
-
-
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url_for('core.index') }}">memeStack</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="{{ url_for('core.index') }}">
+            <img src="../static/images/logo2.png" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class='nav-item'>
-                        <a class="nav-link" href="{{ url_for('core.about') }}">About</a>
-                    </li>
-                    {% if current_user.is_authenticated %}
-                    <li class='nav-item'>
-                        <a class="nav-link" href="{{url_for('meme_post.create_meme')}}">Create Post</a>
-                    </li>
-                    <!-- <li class='nav-item'>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class='nav-item'>
+                    <a class="nav-link" href="{{ url_for('core.about') }}">About</a>
+                </li>
+                {% if current_user.is_authenticated %}
+                <!-- <li class='nav-item'>
+                    <a class="nav-link" href="{{url_for('meme_post.create_meme')}}">Create Post</a>
+                </li> -->
+                <!-- <li class='nav-item'>
                     <a class="nav-link" href="{{url_for('users.profile',username= current_user.username)}}">Profile</a>
                 </li> -->
-                    {% endif %}
-                </ul>
-                <ul class="navbar-nav ml-auto">
-                    {% if current_user.is_authenticated %}
-                    <li class="nav-item">
-                        <!-- {{ url_for('users.account') }} -->
-                        <a class="nav-link" href="{{url_for('users.profile',username= current_user.username)}}">{{current_user.username}}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('users.logout') }}">Log out</a>
-                    </li>
-                    {% else %}
-                    <li class='nav-item'>
-                        <a class="nav-link" href="{{ url_for('users.login') }}">Login</a>
-                    </li>
-                    <li class='nav-item'>
-                        <a class="nav-link" href="{{ url_for('users.register') }}">Register</a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </div>
+                {% endif %}
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                {% if current_user.is_authenticated %}
+                <li class="nav-item">
+                    <!-- {{ url_for('users.account') }} -->
+                    <a class="nav-link" href="{{url_for('users.profile',username= current_user.username)}}">{{current_user.username}}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('users.logout') }}">Log out</a>
+                </li>
+                {% else %}
+                <li class='nav-item'>
+                    <a class="nav-link" href="{{ url_for('users.login') }}">Login</a>
+                </li>
+                <li class='nav-item'>
+                    <a class="nav-link" href="{{ url_for('users.register') }}">Register</a>
+                </li>
+                {% endif %}
+            </ul>
         </div>
     </nav>
 
-    <div class="container">
+    <div class="mainContainer">
         {% block content %} {% endblock %}
     </div>
 

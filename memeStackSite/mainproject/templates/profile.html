@@ -1,19 +1,36 @@
-{% extends "base.html" %} {% block content %} {% if current_user.is_authenticated %}
-<a href="{{ url_for('users.account') }} " class="btn btn-outline-dark" role="button" aria-pressed="true">Setting</a> {% endif %}
-
-
-<div class="jumbotron">
-    <h1>Welcome to {{user.username}}'s Profile</h1>
+{% extends "base.html" %}
+<!-- <br> -->
+{% block content %}
+<!-- <br> -->
+{% if current_user.is_authenticated %}
+<div class="create_post">
+    <a href="{{url_for('meme_post.create_meme')}}">
+        <i class="fas fa-plus-circle" data-toggle="tooltip" data-placement="left" title="Create Post"></i>
+    </a>
 </div>
-
-{% for meme in memes_user %}
-<div class="card">
-    <div class="card-body">
-        <p>Caption: {{meme.meme_caption}}</p>
-        <img src="{{url_for('static',filename= 'memes/'+meme.meme_image)}}" alt="">
-    </div>
+<div class="user_setting">
+    <a href="{{ url_for('users.account') }} ">
+        <i class="fas fa-cog" data-toggle="tooltip" data-placement="left" title="Setting"></i>
+    </a>
 </div>
-<form action="{{url_for('meme_post.delete_meme',meme_post_id = meme.id)}}" method="POST">
-    <input class="btn btn-danger" type="submit" value="Delete">
-</form>
-{% endfor %} {% endblock %}
+{% endif %}
+<!-- <br> -->
+<div class="card-columns profile_card mt-3">
+    {% for meme in memes_user %}
+    <a href="{{url_for('meme_post.meme',meme_post_id= meme.id)}}">
+        <div class="card">
+            <div class="card-header bg-transparent">
+                {{meme.meme_caption}}
+            </div>
+            <img class="card-img-top" src="{{url_for('static',filename= 'memes/'+meme.meme_image)}}" alt="Card image cap">
+            <div class="card-footer bg-transparent">
+                <form action="{{url_for('meme_post.delete_meme',meme_post_id = meme.id)}}" method="POST">
+                    <input class="btn btn-outline-danger" type="submit" value="Delete">
+                </form>
+            </div>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+<!-- <br>  -->
+{% endblock %}

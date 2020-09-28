@@ -1,18 +1,23 @@
 {% extends "base.html" %} {% block content %}
-<div class="jumbotron">
+<!-- <div class="jumbotron">
     <h1>Welcome Home</h1>
+</div> -->
+{% if current_user.is_authenticated %}
+<div class="create_post">
+    <a href="{{url_for('meme_post.create_meme')}}">
+        <i class="fas fa-plus-circle" data-toggle="tooltip" data-placement="left" title="Create Post"></i>
+    </a>
 </div>
+<div class="user_setting">
+    <a href="{{ url_for('users.account') }} ">
+        <i class="fas fa-cog" data-toggle="tooltip" data-placement="left" title="Setting"></i>
+    </a>
+</div>
+{% endif %}
 
-<div class="card-columns">
+
+<div class="card-columns mt-3">
     {% for meme in memes %}
-    <!-- <div class="card">
-        <div class="card-body">
-            <p>
-                <a href="{{url_for('meme_post.meme',meme_post_id= meme.id)}}">Click to see meme</a>
-            </p>
-            <img src="{{url_for('static',filename= 'memes/'+meme.meme_image)}}" alt="">
-        </div>
-    </div> -->
     <a href="{{url_for('meme_post.meme',meme_post_id= meme.id)}}">
         <div class="card">
             <img class="card-img-top" src="{{url_for('static',filename= 'memes/'+meme.meme_image)}}" alt="Card image cap">
@@ -20,11 +25,11 @@
     </a>
     {% endfor %}
 </div>
+
 {% endblock %}
 
-
-
-<!-- <div class="card-body">
-    <h5 class="card-title">Card title that wraps to a new line</h5>
-    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-</div> -->
+<script>
+    $(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>
