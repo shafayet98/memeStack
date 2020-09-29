@@ -94,3 +94,27 @@
 .profile_card .btn-outline-danger {
     width: 100% !important;
 }
+
+
+/* each meme show */
+
+.each_meme img {
+    width: 100%;
+}
+
+.each_meme {
+    padding: 20px;
+    margin-top: 20px;
+    background: #f8f8f8;
+}
+
+.each_meme_author {
+    margin-top: 10px;
+}
+
+.each_meme_author img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}

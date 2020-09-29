@@ -1,7 +1,7 @@
 from flask import render_template,url_for,flash,redirect,request,Blueprint
 from flask_login import login_user, logout_user, current_user, login_required
 from mainproject import db
-from mainproject.models import Meme
+from mainproject.models import Meme, User
 from mainproject.memes.forms import MemePostForm
 from mainproject.memes.picture_handler import add_pic
 meme_post = Blueprint('meme_post',__name__)
@@ -28,7 +28,8 @@ def create_meme():
 @meme_post.route('/<int:meme_post_id>')
 def meme(meme_post_id):
     each_meme = Meme.query.get_or_404(meme_post_id)
-    return render_template('meme_show.html',post = each_meme)
+    user = User.query.filter_by(id = each_meme.user_id).first_or_404()
+    return render_template('meme_show.html',post = each_meme,user = user)
 
 # delete
 @meme_post.route('/<int:meme_post_id>/delete',methods = ['GET','POST'])

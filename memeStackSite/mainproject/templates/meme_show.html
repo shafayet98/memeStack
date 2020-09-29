@@ -1,3 +1,39 @@
-{% extends "base.html" %} {% block content %}
-<p>{{post.meme_caption}}</p>
-<img src="{{url_for('static',filename= 'memes/'+post.meme_image)}}" alt=""> {% endblock %}
+{% extends "base.html" %}
+<!-- <br> -->
+{% block content %}
+
+<!-- <img src="{{url_for('static',filename= 'profile_pics/'+user.profile_image)}}" alt=""> -->
+<div class="container each_meme">
+    <div class="row">
+        <div class="col-sm-6">
+            <img src="{{url_for('static',filename= 'memes/'+post.meme_image)}}" alt="">
+        </div>
+        <div class="col-sm-6">
+            <div class="each_meme_author">
+                <div class="row">
+                    <div class="col-sm-1">
+                        <img src="{{url_for('static',filename= 'profile_pics/'+user.profile_image)}}" alt="">
+                    </div>
+                    <div class="col-sm-11">
+                        <a href="{{url_for('users.profile',username= user.username)}}">
+                            <h4>{{user.username}}</h4>
+                        </a>
+                    </div>
+                </div>
+                <p>
+                    {{post.meme_caption}}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- <br> -->
+{% endblock %}

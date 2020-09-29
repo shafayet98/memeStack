@@ -25,9 +25,9 @@ def add_pic(pic_upload, username):
     strorage_filename = str(username)+str(datetime.datetime.now().time())+"."+ "png"
     filepath = os.path.join(current_app.root_path,'static/memes',strorage_filename)
 
-    outputsize = (200,200)
+    # outputsize = (200,200)
     pic = Image.open(pic_upload)
-    pic.thumbnail(outputsize)
+    # pic.thumbnail(outputsize)
     pic.save(filepath)
 
     model = load_model('mainproject/memes/model.v1.h5')
