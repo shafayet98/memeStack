@@ -18,3 +18,8 @@ if (getURL.includes('register')) {
     $(".navbar-brand").css("display", "none");
     $(".about").css("display", "none");
 }
+
+// create meme
+setTimeout(function() {
+    $('.notMeme').fadeOut('fast');
+}, 5000);

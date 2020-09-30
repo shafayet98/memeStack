@@ -29,8 +29,8 @@ class RegistrationForm(FlaskForm):
             raise ValidationError("Username Taken")
 
 class UpdateUserForm(FlaskForm):
-    email = StringField("Update Email",validators = [DataRequired(),Email()])
-    username = StringField("Update Username",validators= [DataRequired()])
+    email = StringField("Email",validators = [DataRequired(),Email()])
+    username = StringField("Username",validators= [DataRequired()])
     picture = FileField("Update Profile Pictures", validators= [FileAllowed(['jpg','jpeg','png'])])
     submit = SubmitField("Update")
 

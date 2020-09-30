@@ -21,7 +21,7 @@ def create_meme():
             flash("Meme Post Created")
             return redirect(url_for('core.index'))
         else:
-            flash("NOT A MEME")
+            flash("Machine detected that the image you upload is not a meme. Next time please upload a valid picture.")
     return render_template('create_meme.html',form = form)
 
 # show

@@ -1,5 +1,7 @@
-{% extends "base.html" %} {% block content %}
-<div class="jumbotron">
+{% extends "base.html" %}
+<!-- <br> -->
+{% block content %}
+<!-- <div class="jumbotron">
     <form method="POST" enctype="multipart/form-data">
         {{ form.hidden_tag() }}
         <div class="">
@@ -8,5 +10,55 @@
             <br> {{form.submit()}}
         </div>
     </form>
+</div> -->
+
+<div class="container create_meme_style">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 create_meme_form">
+            <h3 class="mt-3">Create Meme</h3>
+            <form class="mt-5" method="POST" enctype="multipart/form-data">
+                {{ form.hidden_tag() }}
+                <!-- caption -->
+                <div class="form-group mt-3">
+                    {{form.meme_caption.label}} {{form.meme_caption(class="form-control") }}
+                </div>
+                <!-- meme img -->
+                <div class="form-group mb-5">
+                    {{form.meme_image.label}}
+                    <br> {{form.meme_image}}
+                </div>
+                {{ form.submit(class="btn btn-outline-dark postMeme") }}
+            </form>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
 </div>
+
+{% with messages = get_flashed_messages() %}
+<!-- <br> -->
+{% if messages %}
+<!-- <br> -->
+{% for msg in messages %}
+<!-- <br> -->
+{% if msg == "Machine detected that the image you upload is not a meme. Next time please upload a valid picture." %}
+<div class="container mt-3 notMeme">
+    <div class="row">
+        <div class="col-sm-3"></div>
+        <div class="col-sm-6 notMemeMsg p-3" style="background-color: rgb(245, 84, 84);">
+            <p style="font-weight: bold; color: white">
+                {{ msg }}
+            </p>
+        </div>
+        <div class="col-sm-3"></div>
+    </div>
+</div>
+{% endif %} {% endfor %}
+<!-- <br> -->
+{% endif %}
+<!-- <br> -->
+{% endwith %}
+<!-- <br> -->
+
+
 {% endblock %}
