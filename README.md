@@ -35,6 +35,9 @@ This pre-trained model were taken from [a github repository](https://github.com/
 
 ![](readme_stuff/3.png)
 
+**Glimpse of profile**
+![](readme_stuff/profile.png)
+
 **When user create the post they are given a form where they can add caption and choose the meme(image). When the click on the post, the pre-trained model checks if the given image is a meme or not. if it's a meme user is redirected to the home page otherwise the image is not upload and a flash messange is shown.**
 
 ![](readme_stuff/1.png)
