@@ -8,6 +8,14 @@
     height: 50px;
 }
 
+.nav-link:link {
+    color: black !important;
+}
+
+.nav-link:hover {
+    color: #dc3545 !important;
+}
+
 
 /* index and profile both */
 
@@ -151,5 +159,14 @@
 /* create meme */
 
 .notMemeMsg {
+    border-radius: 10px;
+}
+
+
+/* about */
+
+.created_by img {
+    width: 200px;
+    height: 200px;
     border-radius: 10px;
 }

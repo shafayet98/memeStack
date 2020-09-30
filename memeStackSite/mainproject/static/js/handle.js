@@ -8,6 +8,8 @@ if (getURL.includes('login')) {
     $(".about").css("display", "none");
 }
 
+
+
 // in index and profile for tooltip
 $(function() {
     $('[data-toggle="tooltip"]').tooltip()

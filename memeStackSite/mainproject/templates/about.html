@@ -1,10 +1,18 @@
 {% extends "base.html" %} {% block content %}
 <div class="jumbotron">
     <h1>About memeStack</h1>
-    <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, beatae explicabo illo delectus necessitatibus suscipit, ducimus cumque facilis quae doloremque numquam exercitationem impedit consequatur ullam id placeat nulla eos omnis? Repellat dicta
-        at voluptatum.
+
+    <div class="created_by mt-4">
+        <img src="../static/images/profile.jpg" alt="">
+        <p style="font-size: 12px;">Created by Shafayet Ul Islam</p>
+    </div>
+
+
+    <p class="mt-4" style="text-align: justify; font-weight: bold;">
+        memeStack is a social platform that connects and helps meme lover to explore and share their contents globally. we use machine learning mostly computer vision technique to detect if the user is uploading meme or something else. Any content that is not
+        considered as meme by the system is not uploadable to the server. <br> The pretrained model were taken from <a href="https://github.com/pranaysawant/Memes-Classification-Model-End-to-End-Solution">this github repository</a>.
     </p>
+
 </div>
 
 

@@ -36,7 +36,6 @@ def login():
         if user.check_password(form.password.data) and user is not None:
             login_user(user)
             flash("Login Success!")
-            
             next = request.args.get('next')
             if next == None or not next[0] == '/':
                 next = url_for('core.index')
@@ -64,7 +63,6 @@ def account():
         form.email.data = current_user.email
     profile_image = url_for('static',filename = 'profile_pics/' + current_user.profile_image)
     return render_template('account.html', profile_image = profile_image, form= form)
-
 
 
 # user's profile where all post of that w=user can be find.
