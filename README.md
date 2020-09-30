@@ -45,6 +45,6 @@ This pre-trained model were taken from [a github repository](https://github.com/
 
 ![](readme_stuff/2.png)
 
-**as the image says the user upload an picture of nature so the machine detects it and gives an message to input a valid image(must be a meme)**
+**As the image says the user upload an picture of nature so the machine detects it and gives an message to input a valid image(must be a meme)**
 
 ### Thanks for visiting the project and keep supporting my work. Thank you.
