@@ -1,6 +1,6 @@
 # memeStack
 
-memeStack is social platform where people around the globe can join and share memes with family and friends. This project was devoloped as a side project where a pre-trained machine learning model were used which detects if user provided content is meme or not.
+memeStack is social platform where people around the globe can join and share memes with family and friends. This project was developed as a side project where a pre-trained machine learning model were used which detects if user provided content is meme or not.
 This pre-trained model were taken from [a github repository](https://github.com/pranaysawant/Memes-Classification-Model-End-to-End-Solution). The model used VGG19 architecture and Binary Cross Entropy were used as performance Metric. Details is provided in the link.
 
 **[Click here to watch the video demo of the project](https://github.com/shafayet98/memeStack/blob/master/readme_stuff/memeStackDemo.mov)**
