@@ -25,3 +25,11 @@ if (getURL.includes('register')) {
 setTimeout(function() {
     $('.notMeme').fadeOut('fast');
 }, 5000);
+
+// bg in login & reg
+if (getURL.includes('login') || getURL.includes('register')) {
+    $(".mainContainer").addClass("bg_wallpaper");
+    $(".bg_wallpaper").css("height", windowHeight);
+} else {
+    $(".mainContainer").removeClass("bg_wallpaper");
+}
