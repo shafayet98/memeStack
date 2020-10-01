@@ -30,6 +30,8 @@ setTimeout(function() {
 if (getURL.includes('login') || getURL.includes('register')) {
     $(".mainContainer").addClass("bg_wallpaper");
     $(".bg_wallpaper").css("height", windowHeight);
+    $(".navbar").css("background", "rgba(0,0,0,0.5)");
+    $(".navbar").removeClass("bg-light");
 } else {
     $(".mainContainer").removeClass("bg_wallpaper");
 }
